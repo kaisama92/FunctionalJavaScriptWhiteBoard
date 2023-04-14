@@ -1,0 +1,42 @@
+Compress Strings.Solution
+const stringExample = aaa
+compress(stringExample) = 3a;
+
+letter will be lowercase
+there will be numbers in input string
+input will be a string
+
+const compressString = (input) => {
+	let result = "";
+  let count = 1;
+  for (let i = 0; i < input.length; i++){
+  let currentChar = input[i];
+  let nextChar = input[i + 1];
+    if (currentChar === nextChar){
+      count ++;
+    } else if (count === 1){
+      result += currentChar;
+    } else {
+    	result += count + currentChar;
+    }
+  }
+  return result;
+}
+
+const compressStringWRecursion = (input) => {
+	let resultString = "";
+  const separate = (string) => {
+  	i = 1;
+    count = 1;
+    let tempString = string[0];
+  	do {
+    	i ++;
+      count ++;
+      string.pop()
+      
+    } while(string[i] = string[0]);
+    tempString = count + tempString;
+    resultString += tempString;
+    return separate(string);
+  }
+}
